@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ByWhiter/EveryDay#readme",
   "devDependencies": {
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
     "validate-commit-msg": "^2.14.0",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2"
