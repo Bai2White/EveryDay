@@ -63,6 +63,19 @@ module.exports = {
         use: [
           'file-loader'
         ]
+      },
+      // 加载JSON 文件，CSV、TSV 和 XM
+      {
+        test: /\.(csv|tsv)$/,
+        use: [
+          'csv-loader'
+        ]
+      },
+      {
+        test: /\.xml$/,
+        use: [
+          'xml-loader'
+        ]
       }
     ]
   }
