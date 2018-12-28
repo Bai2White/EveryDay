@@ -1,0 +1,23 @@
+{
+  "name": "everyday",
+  "version": "1.0.0",
+  "description": "``` ███████╗██╗   ██╗███████╗██████╗ ██╗   ██╗    ██████╗  █████╗ ██╗   ██╗ ██╔════╝██║   ██║██╔════╝██╔══██╗╚██╗ ██╔╝    ██╔══██╗██╔══██╗╚██╗ ██╔╝ █████╗  ██║   ██║█████╗  ██████╔╝ ╚████╔╝     ██║  ██║███████║ ╚████╔╝  ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██╔══██╗  ╚██╔╝      ██║  ██║██╔══██║  ╚██╔╝   ███████╗ ╚████╔╝ ███████╗██║  ██║   ██║       ██████╔╝██║  ██║   ██║    ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝   ╚═╝       ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ```",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByWhiter/EveryDay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ByWhiter/EveryDay/issues"
+  },
+  "homepage": "https://github.com/ByWhiter/EveryDay#readme",
+  "devDependencies": {
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
