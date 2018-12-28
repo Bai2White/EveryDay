@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ByWhiter/EveryDay#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^2.1.0",
     "csv-loader": "^3.0.2",
     "file-loader": "^3.0.1",
