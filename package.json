@@ -1,5 +1,6 @@
 {
   "name": "everyday",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "每天都学习一点",
   "private": true,
