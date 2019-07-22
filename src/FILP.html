@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FLIP(First,Last,Invert,Play)技术</title>
+  <style>
+    .some-element {
+      width: 300px;
+      height: 400px;
+      margin-left: 10px;
+      margin-top: 10px;
+      background: #000;
+      /* transition: all .3s; */
+    }
+    .app-to-end {
+      width: 600px;
+      height: 600px;
+      margin-top: 100px;
+      margin-left: 100px;
+      /* background: red; */
+    }
+  </style>
+</head>
+<body>
+  <div class="some-element"></div>
+  <button onclick="testFILP()">testFILP</button>
+  <script>
+    function testFILP() {
+      const elm = document.querySelector('.some-element');
+      // first
+      const first = elm.getBoundingClientRect();
+      elm.classList.add('app-to-end');
+
+      // last
+      const last = elm.getBoundingClientRect();
+      console.log(last);
+
+      // Invert
+      const deltaX = first.left - last.left;
+      const deltaY = first.top - last.top;
+      const deltaW = first.width / last.width;
+      const deltaH = first.height / last.height;
+
+      // play
+      elm.animate([{
+        transformOrigin: 'top left',
+        transform: `
+          translate(${deltaX}px, ${deltaY}px)
+          scale(${deltaW}, ${deltaH})
+        `
+      }, {
+        transformOrigin: 'top left',
+        transform: 'none'
+      }], {
+        duration: 300,
+        easing: 'ease-in-out',
+        fill: 'both'
+      })
+    }
+
+  </script>
+</body>
+</html>

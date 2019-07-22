@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      color: #000;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .fail {
+      color: red;
+      text-decoration: line-through;
+      background: #ddd;
+    }
+    .pass {
+      color: #fff;
+      background: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <button id="test">测试点击</button>
+  <button id="clear">clear</button>
+  <ul id="results"></ul>
+  <script>
+    // function addMessage(element, message) {
+    //   var messageElement = document.createElement('li');
+    //   messageElement.textContent = message;
+    //   element.appendChild(messageElement);
+    // }
+    // var first = document.getElementById('first')1;
+    // addMessage(first, '一个幸福');
+    // document.addEventListener('click', function() {
+    //   var second = document.getElementById('second');
+    //   addMessage(second, 'click');
+    // });
+    // document.addEventListener('mouseover', function() {
+    //   var second = document.getElementById('second');
+    //   addMessage(second, 'mouseover');
+    // });
+    // console.assert(false, 'This assertion fails');
+    function assert(value, desc) {
+      var li = document.createElement("li");
+      li.className = value ? "pass" : "fail";
+      li.appendChild(document.createTextNode(desc));
+      document.getElementById("results").appendChild(li);
+    }
+    // function report(text) {
+    //   assert(true, text);
+    // }
+
+    // 清空
+    function clear() {
+      document.getElementById('results').innerHTML = '';
+    }
+    var elem = document.getElementById('clear');
+    elem.addEventListener('click', clear);
+
+    function Button() {
+      this.clicked = false;
+      this.click = function() {
+        this.clicked = true;
+        assert(button.clicked, 'The button has been clicked');
+      }
+    }
+    var button = new Button();
+    var elem = document.getElementById('test');
+    elem.addEventListener('click', button.click);
+    const scrollToTop = () => {
+      const c = document.documentElement.scrollTop || document.body.scrollTop;
+      if (c > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        window.scrollTo(0, c - c / 8);
+      }
+    };
+  </script>
+</body>
+</html>
