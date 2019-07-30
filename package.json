@@ -33,6 +33,7 @@
     "purgecss": "^1.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
+    "ts-node": "^8.3.0",
     "typescript": "^3.3.3",
     "uglify-js": "^3.4.9",
     "uglifyjs-webpack-plugin": "^2.1.1",
