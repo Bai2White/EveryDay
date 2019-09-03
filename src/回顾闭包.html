@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .pass, .fail {
+      color: #fff;
+      margin: 5px;
+      padding: 5px;
+    }
+    .pass {
+      background-color: blue;
+    }
+    .fail {
+      background-color: red;
+    }
+    .first-animate1, .first-animate2 {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      transition: all .3s;
+    }
+    .first-animate1 {
+      background: #000;
+    }
+    .first-animate2 {
+      background: red;
+    }
+  </style>
+</head>
+<!-- 断言 -->
+<div id="results"></div>
+<!-- 断言结束 -->
+
+<div class="first-animate1"></div>
+<div class="first-animate2"></div>
+<body>
+  <script>
+    // 断言
+    function assert(value, desc) {
+      var li = document.createElement("li");
+      li.className = value ? "pass" : "fail";
+      li.appendChild(document.createTextNode(desc));
+      document.getElementById("results").appendChild(li);
+    }
+    // 断言结束
+    function animateIt(elem) {
+      var elem = document.querySelector(elem);
+      var tick = 0;
+      var timer = setInterval(function() {
+        if(tick < 100) {
+          elem.style.left = elem.style.top = tick + 'px';
+          tick++;
+        } else {
+          clearInterval(timer);
+          console.log(timer);
+          assert(tick === 100, '动画结束');
+          assert(elem, 'Element also accessed via a closure');
+          assert(timer, 'Timer reference also obtained via a closure');
+        }
+      }, 10)
+    }
+    animateIt('.first-animate1');
+    animateIt('.first-animate2');
+
+  </script>
+</body>
+</html>

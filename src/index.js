@@ -43,9 +43,35 @@
 // for(var i = 0; i < 10; i++) {
 //   console.log(i);
 // }
-function test() {
-  var i = 2;
-  let i = 3;
-  console.log(i);
+// var str3 = '这是一段原始文本,"3c这要替换4d"!';
+// var newStr = str3.replace( /([0-9])([a-z])/g,"$&" );
+// console.log( newStr );    //输出：    这是一段原始文本,"3这要替换4"!';
+// console.log(s)
+
+function Ninja() {
+  var feints = 0;
+  this.getFeints = function() {
+    return feints;
+  }
+  this.feint = function() {
+    feints++;
+  }
 }
-test();
+
+var ninja1 = new Ninja();
+// console.log(ninja1.feints);
+ninja1.feint()
+// console.log(ninja1.getFeints());
+// console.log("22");
+
+
+// var ninja2 = new Ninja();
+// console.log(ninja2.getFeints());
+
+// let testFun = () => {
+//   console.log(this);
+// }
+
+var imposter = {};
+imposter.getFeints = ninja1.getFeints;
+console.log(imposter.getFeints());

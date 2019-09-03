@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      color: #000;
-      padding: 5px;
-      margin-top: 5px;
-    }
-    .fail {
-      color: red;
-      text-decoration: line-through;
-      background: #ddd;
-    }
-    .pass {
-      color: #fff;
-      background: #007bff;
-    }
+  ul {
+    list-style: none;
+    padding: 0;
+    transition:0s;
+  }
+  ul {
+    list-style: none;
+  }
+  /* ss */
+  ol {
+    list-style: none;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+  }
   </style>
 </head>
+
 <body>
   <button id="test">测试点击</button>
   <button id="clear">clear</button>
@@ -47,12 +44,6 @@
     //   addMessage(second, 'mouseover');
     // });
     // console.assert(false, 'This assertion fails');
-    function assert(value, desc) {
-      var li = document.createElement("li");
-      li.className = value ? "pass" : "fail";
-      li.appendChild(document.createTextNode(desc));
-      document.getElementById("results").appendChild(li);
-    }
     // function report(text) {
     //   assert(true, text);
     // }
@@ -66,7 +57,7 @@
 
     function Button() {
       this.clicked = false;
-      this.click = function() {
+      this.click = function () {
         this.clicked = true;
         assert(button.clicked, 'The button has been clicked');
       }
@@ -83,4 +74,5 @@
     };
   </script>
 </body>
+
 </html>
