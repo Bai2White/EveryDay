@@ -72,6 +72,25 @@ ninja1.feint()
 //   console.log(this);
 // }
 
-var imposter = {};
-imposter.getFeints = ninja1.getFeints;
-console.log(imposter.getFeints());
+// var imposter = {};
+// imposter.getFeints = ninja1.getFeints;
+// console.log(imposter.getFeints());
+
+
+function Samurai(name) {
+  　var weapon = "katana";
+  　this.getWeapon = function() {
+  　　 return weapon;
+  　　};
+  　　this.getName = function() {
+  　　  return name;
+  　　}
+  　　this.message = name + " wielding a " + weapon;
+  　　this.getMessage = function() {
+  　　　 return this.message;
+  　　}
+  }
+  var samurai = new Samurai("Hattori");
+  samurai.getWeapon();
+  samurai.getName();
+  samurai.getMessage();
