@@ -6,23 +6,42 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bai2White-生活怎么搞我，我就怎么搞计算机</title>
   <style>
-    body {
-      text-align: center;
-    }
-    div {
-      width: 400px;
-      height: 300px;
-      background: #000;
-    }
-    input:invalid {
-      background: #000;
-    }
   </style>
 </head>
 <body>
-  <div>22</div>
-  <input type="number">
-  https://github.com/30-seconds/30-seconds-of-code/blob/master/vscode_snippets/snippets.json
-  https://rsshub.app/github/file/30-seconds/30-seconds-of-code/master/vscode_snippets/snippets%2ejson
-</body>;i
+  <div class="outer">
+    <div class="inner">222</div>
+  </div>
+</body>
+<script>
+  //  elements
+var outer = document.querySelector('.outer');
+var inner = document.querySelector('.inner');
+
+
+//监听element属性变化
+new MutationObserver(function() {
+  console.log('mutate');
+}).observe(outer, {
+  attributes: true
+});
+
+// click listener…
+function onClick() {
+  console.log('click');
+
+  setTimeout(function() {
+    console.log('timeout');
+  }, 0);
+
+  Promise.resolve().then(function() {
+    console.log('promise');
+  });
+
+  outer.setAttribute('data-random', Math.random());
+}
+
+inner.addEventListener('click', onClick);
+outer.addEventListener('click', onClick);
+</script>
 </html>

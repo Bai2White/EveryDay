@@ -1,0 +1,5 @@
+POST https://gitee.com/JSTFrontend/s-86links-com.git
+content-type: application/json
+######
+GET https://www-api.86links.cn/admin/ip/china
+content-type: application/json

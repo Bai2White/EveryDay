@@ -1,26 +1,46 @@
-function Foo() {
-  getName = function() {
-    console.log(1);
-  }
-  return this;
-}
-Foo.getName = function() {
-  console.log(2);
-}
-Foo.prototype.getName = function() {
-  console.log(3);
-}
-var getName = function() {
-  console.log(4);
-}
-function getName() {
-  console.log(5);
+let a = 20;
+const b = 30;
+var c;
+
+function multiply(e, f) {
+ var g = 20;
+ return e * f * g;
 }
 
-Foo.getName();
-getName();
-Foo().getName();
-getName();
-new Foo.getName();
-new Foo().getName();
-new new Foo().getName();
+c = multiply(20, 30);
+GlobalExectionContext = {
+  ThisBinding: <Global Object>
+  LexicalEnvironment: {
+    EnvironmentRecord: {
+      Type: 'Object',
+      a: <uninitialized>,
+      b: <uninitialized>,
+      multuply: <func>
+    }
+    outer: <null>,
+  },
+  VariableEnvironment: {
+    EnvironmenRecord: {
+      Type: 'Object',
+      c: <undefined>,
+    },
+    outer: null,
+  }
+}
+FunctionExectionContext = {
+  ThisBinding: <Global>,
+  LexicalEnvironment: {
+    EnvironmentRecord: {
+      Type: 'Declaraive',
+      Arguments: {0: 20, 1: 30, length: 2}
+    },
+    outer: <GlobalExectionContext>
+  }
+  VariableEnvironment: {
+    EnvironmentRecord: {
+      type: 'Declarative',
+      g: <undefined>
+    },
+    outer: <GlobalExectionContext>
+  },
+}
