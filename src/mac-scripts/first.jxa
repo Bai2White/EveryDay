@@ -1,4 +1,0 @@
-debugger;
-var currentApp = Application.currentApplication()
-Mail =currentApp.name();
-console.log(Mail.);
